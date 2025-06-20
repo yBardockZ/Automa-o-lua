@@ -1,0 +1,14 @@
+{
+  "_macros": {
+    "DEBUG: Ver corpo nos tiles (seguro)": true,
+    "Capturar corpse": true,
+    "DEBUG: Ver corpo nos tiles": true,
+    "Auto Fishing": true,
+    "DEBUG: Ver objetos ao redor": false,
+    "Auto Fish Hotkey": true,
+    "Auto Attacks (m1~m10)": true,
+    "TESTAR uso da pokebola": true,
+    "Capturar se detectado": false,
+    "Captura via look": true
+  }
+}

@@ -1,0 +1,4 @@
+BotLabel
+  id: autofishing
+  text: AutoFishing
+  onClick: scripts["autofishing"]()
