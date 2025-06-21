@@ -73,8 +73,8 @@ macro(500, "Captura via look", function()
   if not captureEnabled then return end
 
   local center = pos()
-  for x = -1, 1 do
-    for y = -1, 1 do
+  for x = -4, 4 do
+    for y = -4, 4 do
       local checkPos = {x = center.x + x, y = center.y + y, z = center.z}
       local tile = g_map.getTile(checkPos)
       if tile then
