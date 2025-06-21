@@ -5,6 +5,7 @@
 allowedCorpseIds = {} -- Lista de IDs de corpos válidos
 captureEnabled = false
 lastCorpseThing = nil
+lastCorpseId = nil
 
 -- IDs das pokebolas
 local pokeBalls = {
@@ -57,10 +58,11 @@ onTextMessage(function(mode, text)
   if not captureEnabled then return end
   local lowered = text:lower()
   if lowered:find("this is a fainted") or lowered:find("isto e um fainted") then
-    if lastCorpseThing then
+    if lastCorpseThing and lastCorpseId and table.contains(allowedCorpseIds, lastCorpseId) then
       info("Corpse confirmado por look: usando pokebola com useWith")
       useWith(selectedBallId, lastCorpseThing)
       lastCorpseThing = nil
+      lastCorpseId = nil
     end
   end
 end)
@@ -84,6 +86,7 @@ macro(500, "Captura via look", function()
             info("Corpse suspeito detectado, usando look...")
             g_game.look(thing)
             lastCorpseThing = thing
+            lastCorpseId = thing:getId()
             return
           end
         end
